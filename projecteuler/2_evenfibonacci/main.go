@@ -13,17 +13,17 @@ func summit(z ...int) int {
 }
 
 func main() {
-	nro := 0
-	nr := 1
+	nrold := 0
+	nradd := 1
 	var nrlist []int
 	// nrlist := []int{1}
 	for i := 1; i < 40000001; func() {
-		nr = nro + i
-		nro = i
-		i = nr
+		nradd = nrold + i
+		nrold = i
+		i = nradd
 	}() {
-		nrlist = append(nrlist, nr)
+		nrlist = append(nrlist, nradd)
 	}
-	fmt.Println("These are all Fibonacci numbers between 1 and 4mio:", nrlist)
-	fmt.Println("This is the sum of all even Fibonacci numbers between 1 and 4mio:", summit(nrlist...))
+	fmt.Println("All Fibonacci numbers between 1 and 4mio:", nrlist)
+	fmt.Println("Sum of all even Fibonacci numbers between 1 and 4mio:", summit(nrlist...))
 }
