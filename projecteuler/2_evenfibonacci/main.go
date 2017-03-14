@@ -13,16 +13,19 @@ func sumeven(z ...int) int {
 }
 
 func main() {
-	nrold := 0
-	nradd := 1
+	var a int
+	var b int
+	c := 1
 	var nrlist []int
-	// the function in the range argument simulates the Fibonacci sequence
-	for i := 1; i <= 40000000; func() {
-		nradd = nrold + i
-		nrold = i
-		i = nradd
-	}() {
-		nrlist = append(nrlist, nradd)
+	for {
+		fmt.Println(nrlist)
+		nrlist = append(nrlist, c)
+		a = b
+		b = c
+		c = a + b
+		if c > 4000000 {
+			break
+		}
 	}
 	fmt.Println("Sum of all even Fibonacci numbers between 1 and 4mio:", sumeven(nrlist...))
 }
