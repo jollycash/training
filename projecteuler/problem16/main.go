@@ -18,14 +18,6 @@ func converse(x string) []int {
 	return splitnumbers
 }
 
-func power(x, y int) int {
-	xorg := x
-	for i := 1; i < y; i++ {
-		x = x * xorg
-	}
-	return x
-}
-
 func summit(z ...int) int {
 	var summ int
 	for _, i := range z {
@@ -35,11 +27,5 @@ func summit(z ...int) int {
 }
 
 func main() {
-	// var a float64
-	// var b float64
-	// fmt.Scan(&a)
-	// fmt.Scan(&b)
 	fmt.Println(summit(converse(strconv.FormatFloat(math.Pow(2, 1000), 'f', 1, 64))...))
-	// fmt.Println(power(2, ))
-
 }
